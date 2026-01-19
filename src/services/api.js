@@ -23,14 +23,42 @@ export async function getCards() {
   return res.json();
 }
 
-export function addCard(card) {
-  // TODO: implement POST /addcard
+export async function addCard(card) {
+  const res = await fetch(`${API_URL}/addcard`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(card),
+  });
+
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json(); // backend should return the created card (or a message)
 }
 
-export function updateCard(id, card) {
-  // TODO: implement PUT /updatecard/:id
+export async function updateCard(id, card) {
+  const res = await fetch(`${API_URL}/updatecard/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(card),
+  });
+
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json(); // backend should return the updated card (or a message)
 }
 
-export function deleteCard(id) {
-  // TODO: implement DELETE /deletecard/:id
+export async function deleteCard(id) {
+  const res = await fetch(`${API_URL}/deletecard/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+  // some backends return JSON, some return empty.
+  // this makes it safe either way.
+  const text = await res.text();
+  try {
+    return text ? JSON.parse(text) : { success: true };
+  } catch {
+    return { success: true, message: text };
+  }
 }
+
