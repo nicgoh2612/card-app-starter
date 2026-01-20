@@ -7,9 +7,8 @@ export default function CardForm({
   submitText,
 }) {
   return (
-    <form onSubmit={onSubmit}>
-      {/* Card Name */}
-      <div>
+    <form className="card-form" onSubmit={onSubmit}>
+      <div className="form-field">
         <label htmlFor="card_name">Card Name</label>
         <input
           id="card_name"
@@ -19,34 +18,31 @@ export default function CardForm({
           onChange={onChange}
           disabled={busy}
           required
+          placeholder="e.g. Lightning Bolt"
         />
       </div>
 
-      {/* Card Image URL */}
-      <div>
+      <div className="form-field">
         <label htmlFor="card_pic">Card Image URL</label>
         <input
           id="card_pic"
           name="card_pic"
-          type="text"
+          type="url"
           value={values.card_pic || ""}
           onChange={onChange}
           disabled={busy}
           required
+          placeholder="https://..."
         />
       </div>
 
-      {/* Error message */}
-      {error && (
-        <p style={{ color: "red", marginTop: "8px" }}>
-          {error}
-        </p>
-      )}
+      {error && <p className="error">{error}</p>}
 
-      {/* Submit button */}
-      <button type="submit" disabled={busy}>
-        {busy ? "Please wait..." : submitText}
-      </button>
+      <div className="form-actions">
+        <button className="btn btn-primary" type="submit" disabled={busy}>
+          {busy ? "Please wait..." : submitText}
+        </button>
+      </div>
     </form>
   );
 }

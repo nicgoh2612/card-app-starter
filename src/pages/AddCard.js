@@ -35,11 +35,13 @@ export default function AddCard() {
   }
 
   return (
-    <main style={{ maxWidth: 520, margin: "0 auto", padding: 16 }}>
-      <h1>Add New Card</h1>
-      <p>Fill in the details below to add a new card.</p>
-
-      <CardForm
+    <main className="page-center">
+      <div className="page-header">
+        <h1>Add New Card</h1>
+        <p>Fill in the details below to add a new card.</p>
+      </div>
+  
+      <CardForm 
         values={values}
         onChange={handleChange}
         onSubmit={handleSubmit}

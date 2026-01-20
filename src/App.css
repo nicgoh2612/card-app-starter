@@ -97,3 +97,408 @@ p {
 .btn-primary:active {
   transform: translateY(0);
 }
+
+/* ========== Global Reset ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* ========== Layout ========== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  background-color: #1f2933;
+  padding: 16px 24px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 16px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Home Page ========== */
+.home {
+  text-align: center;
+}
+
+.home h1 {
+  margin-bottom: 12px;
+}
+
+.home p {
+  margin-bottom: 12px;
+}
+
+/* ========== Buttons ========== */
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-edit {
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-edit:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-delete {
+  background-color: #dc2626;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #b91c1c;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========== Card Grid ========== */
+.cards-page h1 {
+  margin-bottom: 16px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ========== Card Component ========== */
+.card {
+  background-color: white;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* ========== Forms ========== */
+.card-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form-field input:disabled {
+  background-color: #f0f0f0;
+}
+
+/* ========== Error Text ========== */
+.error {
+  color: #dc2626;
+  margin-bottom: 12px;
+}
+
+.navbar {
+  background: #111827;
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 14px;
+}
+
+.nav-link {
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.primary-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 18px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* Cards page */
+.cards-page h1 {
+  margin: 8px 0 18px;
+}
+
+/* Responsive grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+/* Image area: fixed height, crop nicely */ 
+.card-image {
+  width: 100%;
+  height: 400px;          
+  object-fit: contain;    
+  background-color: #f9fafb;
+  border-radius: 12px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crops nicely */
+  display: block;
+}
+
+/* Body */
+.card-body {
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.card-id {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Actions */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.btn-edit {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #1d4ed8;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Page headings (Add/Edit) ===== */
+.page-center {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+.page-header {
+  text-align: center;
+  margin: 24px 0 18px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 44px;
+  letter-spacing: -0.5px;
+}
+
+.page-header p {
+  margin: 10px 0 0;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* ===== Form Card ===== */
+.card-form {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.10);
+  padding: 22px;
+  margin-top: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.form-field label {
+  font-weight: 800;
+  font-size: 14px;
+  color: #111827;
+}
+
+.form-field input {
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+}
+
+.form-field input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* ===== Primary button (for forms) ===== */
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* Error text (consistent) */
+.error {
+  color: #dc2626;
+  margin: 8px 0 0;
+  font-weight: 700;
+  text-align: center;
+}
+

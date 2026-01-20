@@ -1,26 +1,21 @@
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
-  /* TODO: Complete the navbar 
-    - add links to CardList and AddCard pages 
-    - style as a navbar UI */
-
   return (
-    <header>
-      <strong>Card App</strong>
-      <nav>
-        <NavLink to="/" end>
+    <nav className="navbar">
+      <div className="nav-brand">Card App</div>
+
+      <div className="nav-links">
+        <NavLink to="/" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           Home
         </NavLink>
-        <br></br>
-        <NavLink to="/cards">
-        Cards
+        <NavLink to="/cards" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+          Cards
         </NavLink>
-        <br></br>
-        <NavLink to="/cards/add">
-        Add Card
+        <NavLink to="/cards/new" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+          Add Card
         </NavLink>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }

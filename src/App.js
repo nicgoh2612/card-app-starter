@@ -6,6 +6,7 @@ import AddCard from "./pages/AddCard";
 import EditCard from "./pages/EditCard";
 import "./App.css";
 
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -13,9 +14,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cards" element={<CardList />} />
-        {/* TODO: Complete the routes */}
-        <Route path="/cards/add" element={<AddCard />} />
-        <Route path="/cards/edit/:cardId" element={<EditCard />} />
+        <Route path="/cards/new" element={<AddCard />} />
+        <Route path="/cards/:id/edit" element={<EditCard />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

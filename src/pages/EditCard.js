@@ -84,11 +84,13 @@ export default function EditCard() {
   }
 
   return (
-    <main style={{ maxWidth: 520, margin: "0 auto", padding: 16 }}>
-      <h1>Edit Card</h1>
-      <p>Update the details below and save your changes.</p>
-
-      <CardForm
+    <main className="page-center">
+      <div className="page-header">
+        <h1>Edit Card</h1>
+        <p>Update the details below and save your changes.</p>
+      </div>
+  
+      <CardForm 
         values={values}
         onChange={handleChange}
         onSubmit={handleSubmit}
