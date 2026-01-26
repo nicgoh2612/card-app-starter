@@ -5,6 +5,7 @@ import CardList from "./pages/CardList";
 import AddCard from "./pages/AddCard";
 import EditCard from "./pages/EditCard";
 import "./App.css";
+import Login from "./pages/Login";
 
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/cards" element={<CardList />} />
         <Route path="/cards/new" element={<AddCard />} />
         <Route path="/cards/:id/edit" element={<EditCard />} />
